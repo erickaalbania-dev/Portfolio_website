@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ericka - Virtual Assistant Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <svg class="profile-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <h2>Ericka</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#portfolio" class="nav-link">Portfolio</a>
+                </li>
+             
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="nav-controls">
+                <div class="logo-container">
+                    <img src="ea-services-high-resolution-logo-transparent.png" alt="EA Services Logo" class="header-logo">
+                </div>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="bubbles-container" id="bubbles"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">Hi, I am Ericka, Virtual Assistant</h1>
+                <p class="hero-subtitle">I specialize in admin tasks, inbox and calendar management, research, and client support. With attention to detail and a can-do attitude, I help businesses streamline their operations and focus on what matters most.</p>
+                <div class="hero-buttons">
+                    <!-- Updated download button with direct link -->
+                    <a href="resume.pdf" download="Ericka_Albania_Resume.pdf" class="download-resume-btn">
+                        <span>Download Resume</span>
+                        <svg class="download-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <polyline points="7,10 12,15 17,10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <line x1="12" y1="15" x2="12" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <!-- Updated Hire Me button to scroll to contact -->
+                    <a href="#contact" class="hire-me-btn">
+                        <span>Hire Me</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="ericka.jpg" alt="Ericka - Virtual Assistant" class="profile-picture">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Dedicated Virtual Assistant & Creative Problem Solver</h3>
+                    <p>I am a detail-oriented Virtual Assistant with a strong background in administrative support, customer service, and digital content creation. My goal is to help businesses streamline their operations so they can focus on growth.</p>
+                    <p>With expertise in managing schedules, handling communications, and creating engaging content, I bring a versatile skillset to every project. I pride myself on being proactive, reliable, and always eager to learn new tools to better serve my clients.</p>
+                    
+                    <div class="about-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Name:</span>
+                            <span class="detail-value">Ericka Albania</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Email:</span>
+                            <span class="detail-value">ericka_albania@sjp2cd.edu.ph</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Availability:</span>
+                            <span class="detail-value">Open to Work</span>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="hire-me-btn" style="display: inline-flex; margin-top: 20px;">Let's Talk</a>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <h4>3+</h4>
+                        <p>Years Experience</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>20+</h4>
+                        <p>Projects Done</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>100%</h4>
+                        <p>Client Satisfaction</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Highlights Section -->
+    <section id="portfolio" class="portfolio-highlights">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Portfolio Highlights</h2>
+                <a href="#portfolio" class="view-all-link">View all Projects</a>
+            </div>
+            <div class="portfolio-cards">
+                <div class="portfolio-card">
+                    <h3>Executive Assistant for a Startup CEO (Remote)</h3>
+                    <ul class="portfolio-list">
+                        <li>Managing a rapidly changing schedule with 20+ weekly meetings</li>
+                        <li>Reducing inbox clutter by 60% through smart tagging and filtering</li>
+                        <li>Preparing weekly reports and summarized action items</li>
+                    </ul>
+                </div>
+                <div class="portfolio-card">
+                    <h3>Client Support & Admin for Online Coaching Business</h3>
+                    <ul class="portfolio-list">
+                        <li>Responding to customer inquiries and managing onboarding</li>
+                        <li>Organizing course materials and updating LMS</li>
+                        <li>Maintaining a positive experience for 200+ active members</li>
+                    </ul>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-media">
+                        <img src="Orange and Cream Modern Sandwich Fast Food Instagram Post.png" alt="Sandwich Fast Food Social Media Post Design">
+                    </div>
+                    <h3>Social Media Design: Sandwich Promotion</h3>
+                    <p class="portfolio-desc">Modern and appetizing Instagram post design for a fast food brand, focusing on vibrant colors and clear typography.</p>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-media">
+                        <img src="Red White Modern Chicken shawarma Food Instagram Post.png" alt="Chicken Shawarma Social Media Post Design">
+                    </div>
+                    <h3>Social Media Design: Shawarma Promo</h3>
+                    <p class="portfolio-desc">Eye-catching red and white themed Instagram post designed to boost engagement and sales for a food client.</p>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-media">
+                        <video controls>
+                            <source src="Record_2025-09-28-23-31-17.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <h3>Video Project: Student Grading Portal App</h3>
+                    <p class="portfolio-desc">A screen recording demonstration showcasing workflow efficiency and software proficiency.</p>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-media">
+                        <video controls>
+                            <source src="Screenrecorder-2025-11-29-21-14-24-486.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <h3>Video Project: Quiz Generation App</h3>
+                    <p class="portfolio-desc">Detailed walkthrough video demonstrating technical skills and clear communication.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">My Skills</h2>
+            <div class="skills-content">
+                <div class="skill-category">
+                    <h3>Administrative</h3>
+                    <div class="skill-item">
+                        <span>Email Management</span>
+                        <div class="progress-bar"><div class="progress" style="width: 90%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span>Calendar Scheduling</span>
+                        <div class="progress-bar"><div class="progress" style="width: 95%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span>Data Entry</span>
+                        <div class="progress-bar"><div class="progress" style="width: 85%"></div></div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Tech</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Google Workspace</span>
+                        <span class="tag">Microsoft Office</span>
+                        <span class="tag">Canva</span>
+                        <span class="tag">Trello</span>
+                        <span class="tag">Slack</span>
+                        <span class="tag">Zoom</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Work Together</h2>
+            <div class="contact-content">
+                <div class="contact-intro">
+                    <p>I'd love to help make your workday easier and more efficient.</p>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="contact-info-text">
+                                <h4>Email</h4>
+                                <p><a href="mailto:ericka_albania@sjp2cd.edu.ph" style="color: inherit; text-decoration: none;">ericka_albania@sjp2cd.edu.ph</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16 8C16 10.2091 14.2091 12 12 12C9.79086 12 8 10.2091 8 8C8 5.79086 9.79086 4 12 4C14.2091 4 16 5.79086 16 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12 14C8.13401 14 5 17.134 5 21H19C19 17.134 15.866 14 12 14Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="contact-info-text">
+                                <h4>LinkedIn</h4>
+                                <p><a href="https://www.linkedin.com/in/ericka-albania-85002123a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" style="color: inherit; text-decoration: none;">View Profile</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M20 6H16V4C16 2.89543 15.1046 2 14 2H10C8.89543 2 8 2.89543 8 4V6H4C2.89543 6 2 6.89543 2 8V19C2 20.1046 2.89543 21 4 21H20C21.1046 21 22 20.1046 22 19V8C22 6.89543 21.1046 6 20 6ZM10 4H14V6H10V4ZM20 19H4V8H20V19Z" fill="currentColor"/>
+                                </svg>
+                            </div>
+                            <div class="contact-info-text">
+                                <h4>Upwork</h4>
+                                <p><a href="https://www.upwork.com/freelancers/~01710e7b1f8a54a03e?companyReference=1524632743328866305&mp_source=share" target="_blank" style="color: inherit; text-decoration: none;">View Profile</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Your Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required placeholder="Your Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required placeholder="Project or Inquiry">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required placeholder="How can I help you?"></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <span>Send Message</span>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <line x1="22" y1="2" x2="11" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" onclick="scrollToTop()">
+        ↑
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
+</html>
