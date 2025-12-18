@@ -55,20 +55,24 @@
         <div class="hero-content">
             <div class="hero-text">
                 <h1 class="hero-title">Hi, I am Ericka, Virtual Assistant</h1>
-                <p class="hero-subtitle">I specialize in admin tasks, inbox and calendar management, research, and client support. With attention to detail and a can-do attitude, I help businesses streamline their operations and focus on what matters most.</p>
+                <p class="hero-subtitle">
+                    I help busy founders stay organized, on time, and in control of their inbox and calendar.
+                </p>
+                <ul class="hero-benefits">
+                    <li>Inbox and calendar monitored daily so nothing slips through.</li>
+                    <li>Clients and tasks tracked with clear priorities and follow‑ups.</li>
+                    <li>Simple weekly summaries so you always know what’s next.</li>
+                </ul>
                 <div class="hero-buttons">
-                    <!-- Updated download button with direct link -->
-                    <a href="resume.pdf" download="Ericka_Albania_Resume.pdf" class="download-resume-btn">
-                        <span>Download Resume</span>
-                        <svg class="download-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <polyline points="7,10 12,15 17,10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <line x1="12" y1="15" x2="12" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
-                    <!-- Updated Hire Me button to scroll to contact -->
                     <a href="#contact" class="hire-me-btn">
                         <span>Hire Me</span>
+                    </a>
+                    <a href="#portfolio" class="download-resume-btn">
+                        <span>View My Work</span>
+                    </a>
+                    <!-- Force direct resume download via JS -->
+                    <a href="resume.pdf" class="download-resume-btn download-resume-link" type="application/pdf">
+                        <span>Download Resume</span>
                     </a>
                 </div>
             </div>
@@ -84,9 +88,25 @@
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <h3>Dedicated Virtual Assistant & Creative Problem Solver</h3>
-                    <p>I am a detail-oriented Virtual Assistant with a strong background in administrative support, customer service, and digital content creation. My goal is to help businesses streamline their operations so they can focus on growth.</p>
-                    <p>With expertise in managing schedules, handling communications, and creating engaging content, I bring a versatile skillset to every project. I pride myself on being proactive, reliable, and always eager to learn new tools to better serve my clients.</p>
+                    <p class="section-kicker">Virtual Assistant • Admin Support • Client Care</p>
+                    <h3>Calm, organized support so you can focus on real work</h3>
+                    <p>
+                        I’m Ericka, a reliable Virtual Assistant who keeps inboxes, calendars, and small but
+                        important tasks moving smoothly in the background, so your day feels lighter and more
+                        under control.
+                    </p>
+                    <ul class="about-strengths">
+                        <li>Writes clear, friendly and professional messages your clients will appreciate.</li>
+                        <li>Turns a messy inbox and calendar into an easy‑to‑scan, well‑labeled system.</li>
+                        <li>Spots follow‑ups, deadlines and small issues early before they become problems.</li>
+                        <li>Learns new tools quickly and fits into your existing workflows without friction.</li>
+                    </ul>
+
+                    <div class="about-badges">
+                        <span class="about-badge">Detail‑oriented</span>
+                        <span class="about-badge">Sends on time</span>
+                        <span class="about-badge">Easy to work with</span>
+                    </div>
                     
                     <div class="about-details">
                         <div class="detail-item">
@@ -103,20 +123,20 @@
                         </div>
                     </div>
                     
-                    <a href="#contact" class="hire-me-btn" style="display: inline-flex; margin-top: 20px;">Let's Talk</a>
+                    <a href="#contact" class="hire-me-btn" style="display: inline-flex; margin-top: 20px;">Let’s Work Together</a>
                 </div>
                 <div class="about-stats">
                     <div class="stat-card">
                         <h4>3+</h4>
-                        <p>Years Experience</p>
+                        <p>Years Supporting Teams</p>
                     </div>
                     <div class="stat-card">
                         <h4>20+</h4>
-                        <p>Projects Done</p>
+                        <p>Projects &amp; Tasks Completed</p>
                     </div>
                     <div class="stat-card">
                         <h4>100%</h4>
-                        <p>Client Satisfaction</p>
+                        <p>Committed to Client Care</p>
                     </div>
                 </div>
             </div>
@@ -133,6 +153,7 @@
             <div class="portfolio-cards">
                 <div class="portfolio-card">
                     <h3>Executive Assistant for a Startup CEO (Remote)</h3>
+                    <p class="portfolio-desc">Helped a fast-moving founder stay on top of meetings, priorities, and follow-ups.</p>
                     <ul class="portfolio-list">
                         <li>Managing a rapidly changing schedule with 20+ weekly meetings</li>
                         <li>Reducing inbox clutter by 60% through smart tagging and filtering</li>
@@ -141,6 +162,7 @@
                 </div>
                 <div class="portfolio-card">
                     <h3>Client Support & Admin for Online Coaching Business</h3>
+                    <p class="portfolio-desc">Supported an online coaching program with smooth onboarding and ongoing member care.</p>
                     <ul class="portfolio-list">
                         <li>Responding to customer inquiries and managing onboarding</li>
                         <li>Organizing course materials and updating LMS</li>
@@ -190,22 +212,26 @@
             <h2 class="section-title">My Skills</h2>
             <div class="skills-content">
                 <div class="skill-category">
-                    <h3>Administrative</h3>
+                    <h3>What I Do</h3>
                     <div class="skill-item">
-                        <span>Email Management</span>
-                        <div class="progress-bar"><div class="progress" style="width: 90%"></div></div>
+                        <span>Email & Inbox Management</span>
+                        <span class="skill-level">Advanced</span>
                     </div>
                     <div class="skill-item">
-                        <span>Calendar Scheduling</span>
-                        <div class="progress-bar"><div class="progress" style="width: 95%"></div></div>
+                        <span>Calendar & Meeting Coordination</span>
+                        <span class="skill-level">Advanced</span>
                     </div>
                     <div class="skill-item">
-                        <span>Data Entry</span>
-                        <div class="progress-bar"><div class="progress" style="width: 85%"></div></div>
+                        <span>Client Communication & Support</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>Research & Data Entry</span>
+                        <span class="skill-level">Intermediate</span>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Tools & Tech</h3>
+                    <h3>Tools I Use</h3>
                     <div class="skill-tags">
                         <span class="tag">Google Workspace</span>
                         <span class="tag">Microsoft Office</span>
@@ -222,13 +248,13 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Let's Work Together</h2>
+            <h2 class="section-title">Let’s Make Your Workday Lighter</h2>
             <div class="contact-content">
                 <div class="contact-intro">
-                    <p>I'd love to help make your workday easier and more efficient.</p>
+                    <p>I’d love to help you clear your inbox, organize your schedule, and free up time for the work that matters most.</p>
                 </div>
                 <div class="contact-grid">
-                    <div class="contact-info">
+                <div class="contact-info">
                         <div class="contact-method">
                             <div class="contact-icon">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -270,27 +296,28 @@
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" required placeholder="Your Name">
-                        </div>
+                            </div>
                         <div class="form-group">
                             <label for="email">Email</label>
                             <input type="email" id="email" name="email" required placeholder="Your Email">
-                        </div>
+                            </div>
                         <div class="form-group">
                             <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" required placeholder="Project or Inquiry">
+                            <input type="text" id="subject" name="subject" required placeholder="e.g. Ongoing virtual assistance for my coaching business">
                         </div>
                         <div class="form-group">
                             <label for="message">Message</label>
                             <textarea id="message" name="message" required placeholder="How can I help you?"></textarea>
-                        </div>
+                    </div>
                         <button type="submit" class="submit-btn">
-                            <span>Send Message</span>
+                            <span>Send Inquiry</span>
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <line x1="22" y1="2" x2="11" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 <polygon points="22 2 15 22 11 13 2 9 22 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </button>
                     </form>
+                    <p class="contact-note">Prefer email? You can also write to me directly at <a href="mailto:ericka_albania@sjp2cd.edu.ph">ericka_albania@sjp2cd.edu.ph</a>. I usually reply within 24 hours.</p>
                 </div>
             </div>
         </div>
