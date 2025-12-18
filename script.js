@@ -9,22 +9,127 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollAnimations();
     initBubbles(); 
     initPortfolioFiltering(); // New interactive feature
+    initHeroTypewriter();     // Typewriter effect for hero title
+    initSectionTitleTypewriter(); // Typewriter effect for section titles
+    initResumeDownload();     // Force resume to download
 });
+
+// Hero title typewriter animation
+function initHeroTypewriter() {
+    const titleEl = document.querySelector('.hero-title');
+    if (!titleEl) return;
+
+    const fullText = titleEl.textContent.trim();
+    titleEl.setAttribute('aria-label', fullText);
+    titleEl.textContent = '';
+    titleEl.classList.add('typing');
+
+    let index = 0;
+    const speed = 70;       // milliseconds per character
+    const pauseEnd = 1800;  // pause when full text is shown
+
+    function typeNextChar() {
+        if (index <= fullText.length) {
+            titleEl.textContent = fullText.slice(0, index);
+            index++;
+            setTimeout(typeNextChar, speed);
+        } else {
+            // After showing full text, pause, then smoothly fade out and restart the typing loop
+            setTimeout(() => {
+                titleEl.classList.add('fade-out');
+                setTimeout(() => {
+                    index = 0;
+                    titleEl.textContent = '';
+                    titleEl.classList.remove('fade-out');
+                    typeNextChar();
+                }, 400); // match CSS transition
+            }, pauseEnd);
+        }
+    }
+
+    typeNextChar();
+}
+
+// Section titles typewriter animation (looping)
+function initSectionTitleTypewriter() {
+    const titles = document.querySelectorAll('.section-title');
+    if (!titles.length) return;
+
+    titles.forEach((titleEl, idx) => {
+        const fullText = titleEl.textContent.trim();
+        titleEl.setAttribute('aria-label', fullText);
+        titleEl.textContent = '';
+        titleEl.classList.add('typing');
+
+        let index = 0;
+        const speed = 80;      // ms per character
+        const pauseEnd = 1600; // pause after full text
+        const startDelay = idx * 400; // staggered start per section
+
+        function typeNextChar() {
+            if (index <= fullText.length) {
+                titleEl.textContent = fullText.slice(0, index);
+                index++;
+                setTimeout(typeNextChar, speed);
+            } else {
+                setTimeout(() => {
+                    titleEl.classList.add('fade-out');
+                    setTimeout(() => {
+                        index = 0;
+                        titleEl.textContent = '';
+                        titleEl.classList.remove('fade-out');
+                        typeNextChar();
+                    }, 400);
+                }, pauseEnd);
+            }
+        }
+
+        setTimeout(typeNextChar, startDelay);
+    });
+}
+
+// Force resume.pdf to download instead of open in new tab
+function initResumeDownload() {
+    const downloadLinks = document.querySelectorAll('.download-resume-link');
+    if (!downloadLinks.length) return;
+
+    downloadLinks.forEach(link => {
+        link.addEventListener('click', async (e) => {
+            e.preventDefault();
+            try {
+                const response = await fetch('resume.pdf');
+                const blob = await response.blob();
+                const url = URL.createObjectURL(blob);
+
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'Ericka-Albania-Resume.pdf';
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+                URL.revokeObjectURL(url);
+            } catch (err) {
+                console.error('Resume download failed:', err);
+                // Fallback: navigate to the file
+                window.location.href = 'resume.pdf';
+            }
+        });
+    });
+}
 
 // Portfolio Filtering and Interaction
 function initPortfolioFiltering() {
     const portfolioCards = document.querySelectorAll('.portfolio-card');
     const viewAllLink = document.querySelector('.view-all-link');
     
-    // Initially hide cards beyond the first 4
-    if(window.innerWidth < 768) {
-        portfolioCards.forEach((card, index) => {
-            if (index > 2) {
-                card.style.display = 'none';
-                card.classList.remove('reveal-element'); // Don't animate hidden ones
-            }
-        });
-    }
+    // Initially show only the first 3 cards on ALL screen sizes
+    portfolioCards.forEach((card, index) => {
+        if (index > 2) {
+            card.style.display = 'none';
+        } else {
+            card.style.display = 'flex';
+        }
+    });
 
     if (viewAllLink) {
         viewAllLink.addEventListener('click', function(e) {
@@ -36,38 +141,38 @@ function initPortfolioFiltering() {
             if (!isExpanded) {
                 // Show all cards with a stagger animation
                 portfolioCards.forEach((card, index) => {
-                    if (card.style.display === 'none') {
-                        card.style.display = 'flex';
-                        // Small delay for smooth appearance
-                        setTimeout(() => {
-                            card.style.opacity = '0';
-                            card.style.transform = 'translateY(20px)';
-                            requestAnimationFrame(() => {
-                                card.style.transition = 'all 0.5s ease';
-                                card.style.opacity = '1';
-                                card.style.transform = 'translateY(0)';
-                            });
-                        }, index * 50);
-                    }
+                    card.style.display = 'flex';
+                    // Small delay for smooth appearance
+                    setTimeout(() => {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        requestAnimationFrame(() => {
+                            card.style.transition = 'all 0.5s ease';
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        });
+                    }, index * 50);
                 });
                 
                 this.innerHTML = 'Show Less';
                 this.setAttribute('data-expanded', 'true');
             } else {
-                // Hide extra cards (optional behavior)
-                // For "View All", usually we just scroll to top or keep open. 
-                // Let's implement collapse for interactivity.
-                if(window.innerWidth < 768) {
-                     portfolioCards.forEach((card, index) => {
-                        if (index > 2) {
-                            card.style.display = 'none';
-                        }
-                    });
-                    this.innerHTML = 'View all Projects';
-                    this.setAttribute('data-expanded', 'false');
-                    
-                    // smooth scroll back to portfolio section
-                    document.querySelector('#portfolio').scrollIntoView({behavior: 'smooth'});
+                // Collapse back to initial state: show only first 3 cards
+                portfolioCards.forEach((card, index) => {
+                    if (index > 2) {
+                        card.style.display = 'none';
+                    } else {
+                        card.style.display = 'flex';
+                    }
+                });
+                
+                this.innerHTML = 'View all Projects';
+                this.setAttribute('data-expanded', 'false');
+                
+                // Smooth scroll back to portfolio section so user sees top of list
+                const portfolioSection = document.querySelector('#portfolio');
+                if (portfolioSection) {
+                    portfolioSection.scrollIntoView({ behavior: 'smooth' });
                 }
             }
         });
@@ -112,10 +217,10 @@ function initNavigation() {
 
     // Toggle mobile menu
     if (hamburger) {
-        hamburger.addEventListener('click', function() {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
+    hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
     }
 
     // Close mobile menu when clicking on a link
@@ -147,14 +252,14 @@ function initThemeToggle() {
     updateThemeIcon(currentTheme);
     
     if (themeToggle) {
-        themeToggle.addEventListener('click', function() {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            updateThemeIcon(newTheme);
-        });
+    themeToggle.addEventListener('click', function() {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme);
+    });
     }
 }
 
@@ -236,23 +341,23 @@ function initContactForm() {
     }
     
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
             // Check if user has configured the keys
             if (publicKey === "YOUR_PUBLIC_KEY" || serviceID === "YOUR_SERVICE_ID" || templateID === "YOUR_TEMPLATE_ID") {
                 showNotification('Configuration Required: Please open script.js and add your EmailJS keys.', 'error');
                 console.error('EmailJS not configured. Please edit script.js lines inside initContactForm()');
-                return;
-            }
-
-            const submitBtn = contactForm.querySelector('.submit-btn');
-            const originalText = submitBtn.innerHTML;
-            
+            return;
+        }
+        
+        const submitBtn = contactForm.querySelector('.submit-btn');
+        const originalText = submitBtn.innerHTML;
+        
             // Show loading state
-            submitBtn.innerHTML = '<span>Sending...</span>';
-            submitBtn.disabled = true;
-
+        submitBtn.innerHTML = '<span>Sending...</span>';
+        submitBtn.disabled = true;
+        
             // Prepare template parameters
             const templateParams = {
                 from_name: document.getElementById('name').value,
@@ -265,9 +370,9 @@ function initContactForm() {
             emailjs.send(serviceID, templateID, templateParams)
                 .then(function() {
                     showNotification('Message sent successfully! I will get back to you soon.', 'success');
-                    contactForm.reset();
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.disabled = false;
+            contactForm.reset();
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
                 }, function(error) {
                     console.error('FAILED...', error);
                     // Show the specific error message from EmailJS to help debugging
